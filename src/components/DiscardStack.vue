@@ -22,15 +22,16 @@
           style="
             position: absolute;
             display: flex;
-            font-weight: 800;
             font-size: 1em;
             color: rgb(255, 255, 255, 0.3);
-            box-shadow: 0 0 0 2px rgb(255, 255, 255, 0.3);
             border-radius: 16px;
             height: 100%;
             padding: 16px;
             align-items: center;
-          "
+            padding : 12px;
+            border: 4px solid rgba(255, 255, 255, 0.512);
+
+         "
           class="text-center"
         >
           CLICK HERE TO DISCARD
@@ -56,8 +57,8 @@
 </template>
 
 <script>
-import GameCard from "@/components/Card.vue";
-import SoftIndicator from "@/components/SoftIndicator.vue";
+import GameCard from '@/components/Card.vue';
+import SoftIndicator from '@/components/SoftIndicator.vue';
 
 export default {
   props: {
@@ -71,7 +72,7 @@ export default {
   },
   methods: {
     discard() {
-      this.$emit("discard-a-card");
+      this.$emit('discard-a-card');
     },
   },
   components: {

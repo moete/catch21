@@ -1,12 +1,12 @@
 <template>
   <v-card
     class="pa-0"
-    style="width: 100%; height: 100%"
+    style="width: 100%; height: 100%;border: 3px solid rgba(255, 255, 255, 0.512);"
     outlined
     :style="computedStyle"
   >
     <img
-      style="width: 100%; height: 100%"
+      style="width: 100%; height: 100%;"
       v-if="isFaceUp === true"
       :src="require(`@/assets/cards/${imagePath}.png`)"
     />
@@ -33,22 +33,25 @@ export default {
     imagePath() {
       const colorPath = this.color.toLowerCase();
       const numberPath = this.cardNumber.toLowerCase();
-      return colorPath + "/" + numberPath;
+      return colorPath + '/' + numberPath;
     },
     computedStyle() {
       let shadowStyle;
       if (this.spreadShadow) {
-        shadowStyle = "box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);";
+        shadowStyle =
+          'box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);border: 3px solid rgba(255, 255, 255, 0.512);';
       } else {
-        shadowStyle = "box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);";
+        shadowStyle =
+          'box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);border: 3px solid rgba(255, 255, 255, 0.512);';
       }
 
-      return `position: absolute; border-radius: 1vh;
-      top: ${this.positionZ * this.offsetY}px; left: ${
-        this.positionZ * this.offsetX
-      }px;  ${shadowStyle}`;
+      return `position: absolute;
+      border: 3px solid rgba(255, 255, 255, 0.512);
+      top: ${this.positionZ * this.offsetY}px; left: ${this.positionZ *
+        this.offsetX}px;
+          ${shadowStyle}
+          `;
     },
   },
 };
 </script>
-

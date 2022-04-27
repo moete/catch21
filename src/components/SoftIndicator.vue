@@ -16,12 +16,10 @@ export default {
 <style scoped>
 .labelIndicator {
   font-size: 1.4em;
-    color: rgb(66, 63, 90);
-
+  color: rgb(66, 63, 90);
 }
 .valueIndicator {
   font-size: 1.4em;
   font-weight: 800;
-  color: white;
 }
 </style>

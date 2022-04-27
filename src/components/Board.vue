@@ -1,7 +1,10 @@
 <template>
   <v-container
     fluid
-    style="background-color: rgb(107, 106, 129); width: 100%"
+    id="BgBoard"
+    style="background: linear-gradient(.25turn,#0312ff , 20% ,#03fef8 );
+          background-repeat: no-repeat;
+       width: 100%"
     class="fill-height ma-0 py-0"
   >
     <div
@@ -15,7 +18,7 @@
         <v-row class="text-center pa-0 ma-0" align="center" justify="center">
           <v-col cols="4" lg="12" class="px-2">
             <v-img
-              style="max-width: 400px; width: auto; height: auto; margin: auto"
+              style="max-width: 300px; width: auto; height: auto; margin: auto"
               contain
               :src="require(`@/assets/logo.png`)"
             /><v-img />
@@ -64,16 +67,16 @@
 </template>
 
 <script>
-import Deck from "@/utils/deck";
-import EscapeStack from "@/components/EscapeStack.vue";
-import DrawStack from "@/components/DrawStack.vue";
-import DiscardStack from "@/components/DiscardStack.vue";
-import Score from "@/components/Score.vue";
-import Timer from "@/components/Timer.vue";
-import EndGameDialog from "@/components/EndGameDialog.vue";
+import Deck from '@/utils/deck';
+import EscapeStack from '@/components/EscapeStack.vue';
+import DrawStack from '@/components/DrawStack.vue';
+import DiscardStack from '@/components/DiscardStack.vue';
+import Score from '@/components/Score.vue';
+import Timer from '@/components/Timer.vue';
+import EndGameDialog from '@/components/EndGameDialog.vue';
 
 export default {
-  data: function () {
+  data: function() {
     return {
       drawStack: [],
       discardStack: [],
@@ -88,15 +91,15 @@ export default {
   computed: {
     isMobile() {
       switch (this.$vuetify.breakpoint.name) {
-        case "xs":
+        case 'xs':
           return true;
-        case "sm":
+        case 'sm':
           return true;
-        case "md":
+        case 'md':
           return true;
-        case "lg":
+        case 'lg':
           return false;
-        case "xl":
+        case 'xl':
           return false;
         default:
           return false;
@@ -167,10 +170,10 @@ export default {
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: rgb(115, 124, 104);
-  border: solid rgb(66, 63, 90);
-  border-radius: 20px;
+  /* background-color: rgb(115, 124, 104); */
+  /* border: solid rgb(66, 63, 90); */
+  /* border-radius: 20px; */
   padding: 6px;
-  border-width: 4px 8px 8px 4px;
+  /* border-width: 4px 8px 8px 4px; */
 }
 </style>
